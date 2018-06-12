@@ -82,6 +82,14 @@ namespace NONA_Windows
         {
             var res = GetJson("http://busan-c.iptime.org/nona/storage/");
             pImg1.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[0].imageId.ToString();
+            pImg2.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[1].imageId.ToString();
+            pImg3.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[2].imageId.ToString();
+            pImg4.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[3].imageId.ToString();
+            pImg5.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[4].imageId.ToString();
+            pImg6.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[5].imageId.ToString();
+            pImg7.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[6].imageId.ToString();
+            pImg8.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[7].imageId.ToString();
+            pImg9.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[8].imageId.ToString();
         }
 
         private void recentButton_MouseEnter(object sender, EventArgs e)
