@@ -9,22 +9,15 @@ namespace NONA_Windows
 {
     public partial class DetailView : Form
     {
-        public string productNameStr { get; set; }
-        public string senderName { get; set; }
-        public string quantityInfo { get; set; }
-
         public DetailView(Point parentPos, int pNum, Image pImage)
         {
             InitializeComponent();
             Location = new Point(parentPos.X + 100, parentPos.Y + 40);
             pImageView.Image = pImage;
-            switch (pNum)
-            {
-                case 0:
-                    var res = GetJson("http://busan-c.iptime.org/nona/storage/");
-                    break;
-            }
-            productNameStr = productName.Text;
+            var res = GetJson("http://busan-c.iptime.org/nona/storage/");
+            productName.Text = res[pNum].itemTitle.ToString();
+            quantityLabel.Text = res[pNum].count.ToString();
+            commentLabel.Text = res[pNum].comment.ToString();
         }
 
         private void returnButton_Click(object sender, EventArgs e)

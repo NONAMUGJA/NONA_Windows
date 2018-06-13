@@ -47,10 +47,10 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F);
-            this.titleLabel.Location = new System.Drawing.Point(90, 10);
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
+            this.titleLabel.Location = new System.Drawing.Point(90, 5);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(130, 51);
+            this.titleLabel.Size = new System.Drawing.Size(107, 44);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "로그인";
             // 
@@ -125,6 +125,7 @@
             this.pwInputBox.Name = "pwInputBox";
             this.pwInputBox.Size = new System.Drawing.Size(181, 44);
             this.pwInputBox.TabIndex = 0;
+            this.pwInputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // idInputBox
             // 
@@ -133,18 +134,20 @@
             this.idInputBox.Name = "idInputBox";
             this.idInputBox.Size = new System.Drawing.Size(181, 44);
             this.idInputBox.TabIndex = 0;
+            this.idInputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // returnButton
             // 
+            this.returnButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.returnButton.FlatAppearance.BorderSize = 0;
             this.returnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.returnButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.returnButton.Location = new System.Drawing.Point(21, 10);
+            this.returnButton.Location = new System.Drawing.Point(20, 12);
             this.returnButton.Name = "returnButton";
-            this.returnButton.Size = new System.Drawing.Size(50, 51);
-            this.returnButton.TabIndex = 3;
+            this.returnButton.Size = new System.Drawing.Size(50, 35);
+            this.returnButton.TabIndex = 6;
             this.returnButton.Text = "←";
-            this.returnButton.UseVisualStyleBackColor = true;
-            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
+            this.returnButton.UseVisualStyleBackColor = false;
             // 
             // AccountForm
             // 
