@@ -33,11 +33,11 @@
             this.qrGroup = new System.Windows.Forms.GroupBox();
             this.qrImage = new System.Windows.Forms.PictureBox();
             this.loginGroup = new System.Windows.Forms.GroupBox();
-            this.idLabel = new System.Windows.Forms.Label();
-            this.idInputBox = new System.Windows.Forms.TextBox();
-            this.pwInputBox = new System.Windows.Forms.TextBox();
-            this.pwLabel = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
+            this.pwLabel = new System.Windows.Forms.Label();
+            this.idLabel = new System.Windows.Forms.Label();
+            this.pwInputBox = new System.Windows.Forms.TextBox();
+            this.idInputBox = new System.Windows.Forms.TextBox();
             this.returnButton = new System.Windows.Forms.Button();
             this.qrGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qrImage)).BeginInit();
@@ -48,7 +48,7 @@
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F);
-            this.titleLabel.Location = new System.Drawing.Point(96, 12);
+            this.titleLabel.Location = new System.Drawing.Point(90, 10);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(130, 51);
             this.titleLabel.TabIndex = 0;
@@ -90,28 +90,15 @@
             this.loginGroup.TabStop = false;
             this.loginGroup.Text = "개인정보 인증";
             // 
-            // idLabel
+            // loginButton
             // 
-            this.idLabel.AutoSize = true;
-            this.idLabel.Location = new System.Drawing.Point(41, 88);
-            this.idLabel.Name = "idLabel";
-            this.idLabel.Size = new System.Drawing.Size(67, 37);
-            this.idLabel.TabIndex = 1;
-            this.idLabel.Text = "학번";
-            // 
-            // idInputBox
-            // 
-            this.idInputBox.Location = new System.Drawing.Point(152, 85);
-            this.idInputBox.Name = "idInputBox";
-            this.idInputBox.Size = new System.Drawing.Size(181, 44);
-            this.idInputBox.TabIndex = 0;
-            // 
-            // pwInputBox
-            // 
-            this.pwInputBox.Location = new System.Drawing.Point(152, 160);
-            this.pwInputBox.Name = "pwInputBox";
-            this.pwInputBox.Size = new System.Drawing.Size(181, 44);
-            this.pwInputBox.TabIndex = 0;
+            this.loginButton.Location = new System.Drawing.Point(356, 85);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(103, 119);
+            this.loginButton.TabIndex = 3;
+            this.loginButton.Text = "로그인";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // pwLabel
             // 
@@ -122,20 +109,36 @@
             this.pwLabel.TabIndex = 2;
             this.pwLabel.Text = "생년월일";
             // 
-            // loginButton
+            // idLabel
             // 
-            this.loginButton.Location = new System.Drawing.Point(356, 85);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(103, 119);
-            this.loginButton.TabIndex = 3;
-            this.loginButton.Text = "로그인";
-            this.loginButton.UseVisualStyleBackColor = true;
+            this.idLabel.AutoSize = true;
+            this.idLabel.Location = new System.Drawing.Point(41, 88);
+            this.idLabel.Name = "idLabel";
+            this.idLabel.Size = new System.Drawing.Size(67, 37);
+            this.idLabel.TabIndex = 1;
+            this.idLabel.Text = "학번";
+            // 
+            // pwInputBox
+            // 
+            this.pwInputBox.Location = new System.Drawing.Point(152, 160);
+            this.pwInputBox.MaxLength = 6;
+            this.pwInputBox.Name = "pwInputBox";
+            this.pwInputBox.Size = new System.Drawing.Size(181, 44);
+            this.pwInputBox.TabIndex = 0;
+            // 
+            // idInputBox
+            // 
+            this.idInputBox.Location = new System.Drawing.Point(152, 85);
+            this.idInputBox.MaxLength = 4;
+            this.idInputBox.Name = "idInputBox";
+            this.idInputBox.Size = new System.Drawing.Size(181, 44);
+            this.idInputBox.TabIndex = 0;
             // 
             // returnButton
             // 
             this.returnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.returnButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.returnButton.Location = new System.Drawing.Point(21, 12);
+            this.returnButton.Location = new System.Drawing.Point(21, 10);
             this.returnButton.Name = "returnButton";
             this.returnButton.Size = new System.Drawing.Size(50, 51);
             this.returnButton.TabIndex = 3;

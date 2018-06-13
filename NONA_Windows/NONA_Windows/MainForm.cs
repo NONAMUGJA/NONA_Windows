@@ -158,5 +158,59 @@ namespace NONA_Windows
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
         }
+
+        private void pImg1_Click(object sender, EventArgs e)
+        {
+            DetailView dv = new DetailView(Location, 0, pImg1.Image);
+            dv.ShowDialog();
+        }
+
+        private void pImg2_Click(object sender, EventArgs e)
+        {
+            DetailView dv = new DetailView(Location, 1, pImg2.Image);
+            dv.ShowDialog();
+        }
+
+        private void pImg3_Click(object sender, EventArgs e)
+        {
+            DetailView dv = new DetailView(Location, 2, pImg3.Image);
+            dv.ShowDialog();
+        }
+
+        private void pImg4_Click(object sender, EventArgs e)
+        {
+            DetailView dv = new DetailView(Location, 3, pImg4.Image);
+            dv.ShowDialog();
+        }
+
+        private void pImg5_Click(object sender, EventArgs e)
+        {
+            DetailView dv = new DetailView(Location, 4, pImg5.Image);
+            dv.ShowDialog();
+        }
+
+        private void pImg6_Click(object sender, EventArgs e)
+        {
+            DetailView dv = new DetailView(Location, 5, pImg6.Image);
+            dv.ShowDialog();
+        }
+
+        private void pImg7_Click(object sender, EventArgs e)
+        {
+            DetailView dv = new DetailView(Location, 6, pImg7.Image);
+            dv.ShowDialog();
+        }
+
+        private void pImg8_Click(object sender, EventArgs e)
+        {
+            DetailView dv = new DetailView(Location, 7, pImg8.Image);
+            dv.ShowDialog();
+        }
+
+        private void pImg9_Click(object sender, EventArgs e)
+        {
+            DetailView dv = new DetailView(Location, 8, pImg9.Image);
+            dv.ShowDialog();
+        }
     }
 }

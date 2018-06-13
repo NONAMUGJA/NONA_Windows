@@ -57,6 +57,12 @@
     <Compile Include="AccountForm.Designer.cs">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailView.Designer.cs">
+      <DependentUpon>DetailView.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailView.resx">
+      <DependentUpon>DetailView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
