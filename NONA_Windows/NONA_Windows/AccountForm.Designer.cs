@@ -148,6 +148,7 @@
             this.returnButton.TabIndex = 6;
             this.returnButton.Text = "←";
             this.returnButton.UseVisualStyleBackColor = false;
+            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
             // 
             // AccountForm
             // 
