@@ -13,7 +13,10 @@ namespace NONA_Windows
         public NONAMain()
         {
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            tileRefreshWorker.RunWorkerAsync();
+            notificationService.RunWorkerAsync();
+            notifyIcon.BalloonTipTitle = "NONA";
         }
 
         private static DateTime Delay(int ms)
@@ -80,16 +83,7 @@ namespace NONA_Windows
 
         private void recentButton_Click(object sender, EventArgs e)
         {
-            var res = GetJson("http://busan-c.iptime.org/nona/storage/");
-            pImg1.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[0].imageId.ToString();
-            pImg2.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[1].imageId.ToString();
-            pImg3.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[2].imageId.ToString();
-            pImg4.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[3].imageId.ToString();
-            pImg5.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[4].imageId.ToString();
-            pImg6.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[5].imageId.ToString();
-            pImg7.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[6].imageId.ToString();
-            pImg8.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[7].imageId.ToString();
-            pImg9.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[8].imageId.ToString();
+            MessageBox.Show("최근 알림");
         }
 
         private void recentButton_MouseEnter(object sender, EventArgs e)
@@ -211,6 +205,41 @@ namespace NONA_Windows
         {
             DetailView dv = new DetailView(Location, 8, pImg9.Image);
             dv.ShowDialog();
+        }
+
+        private void tileRefreshWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            while (true)
+            {
+                var res = GetJson("http://busan-c.iptime.org/nona/storage/");
+                pImg1.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[0].imageId.ToString();
+                pImg2.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[1].imageId.ToString();
+                pImg3.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[2].imageId.ToString();
+                pImg4.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[3].imageId.ToString();
+                pImg5.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[4].imageId.ToString();
+                pImg6.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[5].imageId.ToString();
+                pImg7.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[6].imageId.ToString();
+                pImg8.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[7].imageId.ToString();
+                pImg9.ImageLocation = "http://busan-c.iptime.org/nona/storage/img/uploads/" + res[8].imageId.ToString();
+                Delay(10000);
+            }
+        }
+
+        private dynamic prevJsonData = null;
+
+        private void notificationService_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            while (true)
+            {
+                var res = GetJson("http://busan-c.iptime.org/nona/storage/");
+                if (res != prevJsonData)
+                {
+                    prevJsonData = res;
+                    notifyIcon.BalloonTipText = "새로운 상품이 등록되었습니다.";
+                    notifyIcon.ShowBalloonTip(1000);
+                }
+                Delay(2000);
+            }
         }
     }
 }

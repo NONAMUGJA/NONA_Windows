@@ -123,6 +123,7 @@
             this.requestTradeButton.Text = "교환 신청 보내기";
             this.requestTradeButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.requestTradeButton.UseVisualStyleBackColor = false;
+            this.requestTradeButton.Click += new System.EventHandler(this.requestTradeButton_Click);
             // 
             // DetailView
             // 

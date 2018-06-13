@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NONAMain));
             this.menuPanel = new System.Windows.Forms.Panel();
             this.portraitLogo = new System.Windows.Forms.Label();
@@ -61,6 +62,9 @@
             this.p1 = new System.Windows.Forms.Panel();
             this.pImg1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.tileRefreshWorker = new System.ComponentModel.BackgroundWorker();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.notificationService = new System.ComponentModel.BackgroundWorker();
             this.menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recentButton)).BeginInit();
@@ -480,6 +484,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "1";
             // 
+            // tileRefreshWorker
+            // 
+            this.tileRefreshWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.tileRefreshWorker_DoWork);
+            // 
+            // notifyIcon
+            // 
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "notifyIcon";
+            this.notifyIcon.Visible = true;
+            // 
+            // notificationService
+            // 
+            this.notificationService.DoWork += new System.ComponentModel.DoWorkEventHandler(this.notificationService_DoWork);
+            // 
             // NONAMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -573,6 +591,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pImg2;
         private System.Windows.Forms.Label label2;
+        private System.ComponentModel.BackgroundWorker tileRefreshWorker;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.ComponentModel.BackgroundWorker notificationService;
     }
 }
 
